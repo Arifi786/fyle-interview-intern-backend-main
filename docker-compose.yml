@@ -1,0 +1,13 @@
+
+
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
+      - PYTHONPATH=/app
+    command: python core/server.py
